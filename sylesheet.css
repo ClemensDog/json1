@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Rammetto+One');
+
+
+
+body{
+    background-color: #262425;
+    color: #e99c25;
+    font-family: 'Rammetto One', sans-serif;
+    font-size: 1em;
+    margin-left: 10px;
+    }
+
+main {
+    background-color: #262425;
+    color: #e99c25;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    font-size: 0.8em;
+    color: orange;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+
+
+header {
+    grid-area: main;
+    background-image: url(../img/pizza.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    padding-bottom: 100px;
+}
+
+.logo {
+    font-family: 'Rammetto One', sans-serif;
+    font-size: 3em;
+    color: black;
+    width: 500px;
+    padding: 120px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+h1{
+    color: orange;
+}
+
+
+.text {
+    float: right;
+    padding: 5px;
+    margin-left: 100%;
+
+
+}
+
+/*////////////////////////////////////////////////*/
+
+@media all and (min-width:800px) {
+    body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "main";
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "main";
+    }
+    }
+
+    .text {
+        float: left;
+        margin-left: 30px;
+        margin-right: 100%;
+        margin-bottom: 15px;
+        margin-top: 5px;
+    }
+
