@@ -11,12 +11,53 @@ body{
     margin-left: 10px;
     }
 
-main {
-    background-color: #262425;
-    color: #e99c25;
+
+main section {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-gap: .5em;
 }
+
+article {
+    background: ;
+    position: relative;
+}
+
+section h2 {
+    grid-column: 1/-1;
+
+}
+
+article > img {
+    width: 100%;
+}
+
+.price,
+.discountprice {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 0.5em;
+    background: #262425;
+}
+
+.price {
+    left: 0;
+}
+
+.discountprice {
+    right: 0;
+    background: black;
+}
+
+.hide {
+    display: none;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
 
 
 ul {
@@ -41,11 +82,10 @@ li a {
 }
 
 /* Change the link color to #111 (black) on hover */
+
 li a:hover {
     background-color: #111;
 }
-
-
 
 header {
     grid-area: main;
@@ -67,7 +107,7 @@ header {
 
 }
 
-h1{
+h1 {
     color: orange;
 }
 
@@ -83,23 +123,3 @@ h1{
 /*////////////////////////////////////////////////*/
 
 @media all and (min-width:800px) {
-    body {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "main";
-    }
-
-    main{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "main";
-    }
-    }
-
-    .text {
-        float: left;
-        margin-left: 30px;
-        margin-right: 100%;
-        margin-bottom: 15px;
-        margin-top: 5px;
-    }
-

@@ -1,17 +1,46 @@
-"use stric"
+"use strict"
 const template = document.querySelector('template').content;
 const main = document.querySelector('main');
-const link = "http://kea-alt-del.dk/t5/api/productlist";
+const catLink = "http://kea-alt-del.dk/t5/api/categories";
+const pListLink = "http://kea-alt-del.dk/t5/api/productlist";
 const imglink = "http://kea-alt-del.dk/t5/site/imgs/"
-fetch(link).then(result=>result.json()).then(generic_word=>show(generic_word));
 
-function show(generic_word){
-    generic_word.forEach(elem=>{
-        console.log(elem.shortdescription);
+fetch(catLink).then(result => result.json()).then(data => createCatContainers(data));
+
+function createCatContainers(categories) {
+    categories.forEach(category => {
+        const section = document.createElement("section");
+        const h2 = document.createElement("h2");
+        section.id = category;
+        h2.textContent = category;
+        section.appendChild(h2);
+        main.appendChild(section);
+    });
+    fetch(pListLink).then(result => result.json()).then(data => showProducts(data));
+}
+
+function showProducts(data) {
+    data.forEach(elem => {
+        const section = document.querySelector("#" + elem.category);
         const clone = template.cloneNode(true);
-        clone.querySelector("img").src=imglink +"small/" +elem.image + "-sm.jpg";
-        clone.querySelector("h2").textContent=elem.name;
-        clone.querySelector("p").textContent=elem.shortdescription;
-        main.appendChild(clone);
+        clone.querySelector("img").src = "http://kea-alt-del.dk/t5/site/imgs/small/" + elem.image + "-sm.jpg";
+        clone.querySelector("h2").textContent = elem.name;
+        clone.querySelector("p").textContent = elem.shortdescription;
+        clone.querySelector(".price span").textContent = elem.price;
+        if (elem.discount) {
+            const newPrice = Math.ceil(elem.price - elem.price * elem.discount / 100);
+            clone.querySelector(".discountprice span").textContent = newPrice;
+            clone.querySelector(".discountprice.hide").classList.remove("hide")
+            clone.querySelector(".price").classList.add("strike");
+        }
+        if (elem.alcohol) { //elem.alcohol could be 0;
+            console.log("alcohol")
+            const newImage = document.createElement("img");
+            newImage.setAttribute("src", "imgs/alc.png");
+            newImage.setAttribute("alt", "Contains alcohol " + elem.alcohol + "%");
+            newImage.setAttribute("title", "Contains alcohol " + elem.alcohol + "%");
+            clone.querySelector(".icons").appendChild(newImage);
+        }
+        section.appendChild(clone);
     })
 }
