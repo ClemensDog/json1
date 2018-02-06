@@ -36,7 +36,7 @@ function showProducts(data) {
         if (elem.alcohol) { //elem.alcohol could be 0;
             console.log("alcohol")
             const newImage = document.createElement("img");
-            newImage.setAttribute("src", "imgs/alc.png");
+            newImage.setAttribute("src", "img/alc.png");
             newImage.setAttribute("alt", "Contains alcohol " + elem.alcohol + "%");
             newImage.setAttribute("title", "Contains alcohol " + elem.alcohol + "%");
             clone.querySelector(".icons").appendChild(newImage);
