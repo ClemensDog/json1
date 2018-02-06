@@ -1,6 +1,7 @@
 "use strict"
 const template = document.querySelector('template').content;
 const main = document.querySelector('main');
+const nav = document.querySelector('nav');
 const catLink = "http://kea-alt-del.dk/t5/api/categories";
 const pListLink = "http://kea-alt-del.dk/t5/api/productlist";
 const imglink = "http://kea-alt-del.dk/t5/site/imgs/"
@@ -8,8 +9,14 @@ const imglink = "http://kea-alt-del.dk/t5/site/imgs/"
 fetch(catLink).then(result => result.json()).then(data => createCatContainers(data));
 
 function createCatContainers(categories) {
+    categories.unshift("menu");
     categories.forEach(category => {
         const section = document.createElement("section");
+        const a = document.createElement("a");
+        a.textContent = category;
+        a.href= "#";
+        a.addEventListener("click", ()=>filter(category));
+        nav.appendChild(a);
         const h2 = document.createElement("h2");
         section.id = category;
         h2.textContent = category;
@@ -18,6 +25,19 @@ function createCatContainers(categories) {
     });
     fetch(pListLink).then(result => result.json()).then(data => showProducts(data));
 }
+
+function filter(myFilter) {
+    document.querySelectorAll("main section").forEach(section => {
+        if (section.id == myFilter || myFilter == "menu") {
+            section.classList.remove("hide");
+
+        } else {
+            section.classList.add("hide");
+        }
+    })
+}
+
+
 
 function showProducts(data) {
     data.forEach(elem => {
@@ -36,7 +56,7 @@ function showProducts(data) {
         if (elem.alcohol) { //elem.alcohol could be 0;
             console.log("alcohol")
             const newImage = document.createElement("img");
-            newImage.setAttribute("src", "img/alc.png");
+            newImage.setAttribute("src", "imgs/alc.png");
             newImage.setAttribute("alt", "Contains alcohol " + elem.alcohol + "%");
             newImage.setAttribute("title", "Contains alcohol " + elem.alcohol + "%");
             clone.querySelector(".icons").appendChild(newImage);

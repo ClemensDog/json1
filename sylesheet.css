@@ -60,25 +60,29 @@ article > img {
 
 
 
-ul {
+nav a{
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 5px;
+    padding-right: 5px;
     overflow: hidden;
-    background-color: black;
+
+    color: orange;
 }
 
 li {
     float: left;
+    list-style-type: none;
+
 }
 
 li a {
     display: block;
     font-size: 0.8em;
-    color: orange;
+    color: black;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -119,7 +123,3 @@ h1 {
 
 
 }
-
-/*////////////////////////////////////////////////*/
-
-@media all and (min-width:800px) {
