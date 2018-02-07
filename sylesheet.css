@@ -16,15 +16,18 @@ main section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
     grid-gap: .5em;
+
 }
 
 article {
     background: ;
     position: relative;
+
 }
 
 section h2 {
     grid-column: 1/-1;
+    text-transform:capitalize;
 
 }
 
@@ -66,6 +69,7 @@ nav a{
     padding: 5px;
     padding-right: 5px;
     overflow: hidden;
+    text-transform:capitalize;
 
     color: orange;
 }
