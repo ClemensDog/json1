@@ -42,6 +42,7 @@ function filter(myFilter) {
 }
 
 function showDetails(product) {
+    modal.querySelector("p2").textContent = product.allergens;
     modal.querySelector("h1").textContent = product.name;
     modal.querySelector("p").textContent = product.longdescription;
     modal.classList.remove("hide");
