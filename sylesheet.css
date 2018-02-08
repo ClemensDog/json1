@@ -29,6 +29,29 @@ section h2 {
     grid-column: 1/-1;
     text-transform:capitalize;
 
+
+}
+
+#modal{
+    padding-top: 10vh;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    right:0;
+    background: (0,0,0.7);
+
+
+
+}
+
+#modal aside{
+    padding-top: 10vh;
+    width: 80vw;
+    height: 80vh;
+    margin: auto;
+    background: white;
+
 }
 
 article > img {
