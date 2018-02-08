@@ -59,14 +59,18 @@ section h2 {
 #modal aside {
     padding: 1em;
     padding-top: 10vh;
-    width: 80vw;
-    height: 80vh;
+    width: 60vw;
+    height: 50vh;
     margin: auto;
-    background: grey;
+    background: #262425;
 
 }
 
-.modalpic {}
+.modalpic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .icons img {
     width: 100px;
@@ -150,21 +154,33 @@ header {
     padding-bottom: 100px;
 }
 
-.logo {
+.logo h1 {
     font-family: 'Rammetto One', sans-serif;
     font-size: 3em;
     color: black;
-    width: 500px;
     padding: 120px;
     margin-left: auto;
     margin-right: auto;
 
 }
 
-h1 {
+main h1 {
     color: orange;
 }
 
+button {
+    background-color: orange;
+    font-family: 'Rammetto One', sans-serif;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 
 .text {
     float: right;
