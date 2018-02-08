@@ -45,6 +45,7 @@ function showDetails(product) {
     modal.querySelector("h1").textContent = product.name;
     modal.querySelector("p").textContent = product.longdescription;
     modal.classList.remove("hide");
+    modal.querySelector("img").src = "http://kea-alt-del.dk/t5/site/imgs/small/" + product.image + "-sm.jpg";
 
 
 }
