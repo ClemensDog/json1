@@ -71,7 +71,7 @@ function showProducts(data) {
             clone.querySelector(".discountprice.hide").classList.remove("hide")
             clone.querySelector(".price").classList.add("strike");
         }
-        if (elem.alcohol) { //elem.alcohol could be 0;
+        if (elem.alcohol) {
 
             const newImage = document.createElement("img");
             newImage.setAttribute("src", "img/alc.png");
