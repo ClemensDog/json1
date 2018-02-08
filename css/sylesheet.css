@@ -30,9 +30,13 @@ article {
     z-index: 0;
     position: relative;
 }
+header h1{
+    text-decoration: none;
+}
 
 h1{
     text-align: center;
+    text-decoration: underline;
 }
 
 section h2 {
@@ -165,7 +169,7 @@ header {
     background: black;
     text-align: center;
     background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 
