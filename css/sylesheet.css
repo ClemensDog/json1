@@ -164,6 +164,8 @@ header {
 .logo{
     background: black;
     text-align: center;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 
