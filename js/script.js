@@ -80,6 +80,14 @@ function showProducts(data) {
             clone.querySelector(".icons").appendChild(newImage);
         }
 
+        if (elem.soldout) {
+
+            const newImage = document.createElement("img");
+            newImage.setAttribute("src", "img/soldout.png");
+            newImage.setAttribute("alt", "soldout " + elem.soldout + "%");
+            newImage.setAttribute("title", "soldout " + elem.soldout);
+            clone.querySelector(".icons").appendChild(newImage);
+        }
 
 
 
