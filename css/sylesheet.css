@@ -19,6 +19,7 @@ main section {
 
 article {
     background: white;
+    border: 4px solid orange;
     display: inline;
     float: left;
     margin: 0 20px 50px;
@@ -122,6 +123,7 @@ nav a {
     text-transform: capitalize;
     font-size: 0.8em;
 
+
     color: orange;
 }
 
@@ -149,6 +151,7 @@ li a {
     color: orange;
     text-align: center;
     padding: 14px 16px;
+    text-decoration: none;
 
 }
 
