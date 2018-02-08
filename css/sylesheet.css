@@ -31,11 +31,12 @@ article {
     z-index: 0;
     position: relative;
 }
-header h1{
+
+header h1 {
     text-decoration: none;
 }
 
-h1{
+h1 {
     text-align: center;
     text-decoration: underline;
 }
@@ -112,9 +113,12 @@ article > img {
     text-decoration: line-through;
 }
 
+#nav {
+    width: 150px;
+    list-style: none;
+}
 
-
-nav a {
+#nav a {
     list-style-type: none;
     margin: 0;
     padding: 5px;
@@ -122,9 +126,17 @@ nav a {
     overflow: hidden;
     text-transform: capitalize;
     font-size: 0.8em;
-
-
     color: orange;
+}
+
+#nav a:active,
+#nav a:focus,
+#nav a:hover {
+    color: white;
+}
+
+#nav #current {
+    color: white;
 }
 
 nav a:hover {
@@ -132,7 +144,7 @@ nav a:hover {
 
 }
 
-ul{
+ul {
     font-size: 0.8em;
     text-align: center;
     padding: 14px 16px;
@@ -168,7 +180,7 @@ header {
     padding-bottom: 100px;
 }
 
-.logo{
+.logo {
     background: black;
     text-align: center;
     background-color: rgb(0, 0, 0);

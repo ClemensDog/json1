@@ -94,3 +94,4 @@ function showProducts(data) {
         section.appendChild(clone);
     })
 }
+
